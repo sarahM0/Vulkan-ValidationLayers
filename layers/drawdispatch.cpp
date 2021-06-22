@@ -178,6 +178,51 @@ struct DispatchVuidsCmdDrawIndexed : DrawDispatchVuid {
     }
 };
 
+struct DispatchVuidsCmdDrawMultiIndexedEXT : DrawDispatchVuid {
+    DispatchVuidsCmdDrawMultiIndexedEXT() : DrawDispatchVuid() {
+        pipeline_bound = "VUID-vkCmdDrawMultiIndexedEXT-None-02700";
+        dynamic_state = "VUID-vkCmdDrawMultiIndexedEXT-commandBuffer-02701";
+        vertex_binding = "VUID-vkCmdDrawMultiIndexedEXT-None-04007";
+        vertex_binding_null = "VUID-vkCmdDrawMultiIndexedEXT-None-04008";
+        compatible_pipeline = "VUID-vkCmdDrawMultiIndexedEXT-None-02697";
+        render_pass_compatible = "VUID-vkCmdDrawMultiIndexedEXT-renderPass-02684";
+        subpass_index = "VUID-vkCmdDrawMultiIndexedEXT-subpass-02685";
+        sample_location = "VUID-vkCmdDrawMultiIndexedEXT-sampleLocationsEnable-02689";
+        linear_sampler = "VUID-vkCmdDrawMultiIndexedEXT-magFilter-04553";
+        cubic_sampler = "VUID-vkCmdDrawMultiIndexedEXT-None-02692";
+        viewport_count = "VUID-vkCmdDrawMultiIndexedEXT-viewportCount-03417";
+        scissor_count = "VUID-vkCmdDrawMultiIndexedEXT-scissorCount-03418";
+        viewport_scissor_count = "VUID-vkCmdDrawMultiIndexedEXT-viewportCount-03419";
+        primitive_topology = "VUID-vkCmdDrawMultiIndexedEXT-primitiveTopology-03420";
+        corner_sampled_address_mode = "VUID-vkCmdDrawMultiIndexedEXT-flags-02696";
+        subpass_input = "VUID-vkCmdDrawMultiIndexedEXT-None-02686";
+        imageview_atomic = "VUID-vkCmdDrawMultiIndexedEXT-None-02691";
+        push_constants_set = "VUID-vkCmdDrawMultiIndexedEXT-None-02698";
+        image_subresources = "VUID-vkCmdDrawMultiIndexedEXT-None-04584";
+        descriptor_valid = "VUID-vkCmdDrawMultiIndexedEXT-None-02699";
+        sampler_imageview_type = "VUID-vkCmdDrawMultiIndexedEXT-None-02702";
+        sampler_implicitLod_dref_proj = "VUID-vkCmdDrawMultiIndexedEXT-None-02703";
+        sampler_bias_offset = "VUID-vkCmdDrawMultiIndexedEXT-None-02704";
+        vertex_binding_attribute = "VUID-vkCmdDrawMultiIndexedEXT-None-02721";
+        dynamic_state_setting_commands = "VUID-vkCmdDrawMultiIndexedEXT-None-02859";
+        rasterization_samples = "VUID-vkCmdDrawMultiIndexedEXT-rasterizationSamples-04740";
+        unprotected_command_buffer = "VUID-vkCmdDrawMultiIndexedEXT-commandBuffer-02707";
+        protected_command_buffer = "VUID-vkCmdDrawMultiIndexedEXT-commandBuffer-02712";
+        max_multiview_instance_index = "VUID-vkCmdDrawMultiIndexedEXT-maxMultiviewInstanceIndex-02688";
+        img_filter_cubic = "VUID-vkCmdDrawMultiIndexedEXT-None-02693";
+        filter_cubic = "VUID-vkCmdDrawMultiIndexedEXT-filterCubic-02694";
+        filter_cubic_min_max = "VUID-vkCmdDrawMultiIndexedEXT-filterCubicMinmax-02695";
+        viewport_count_primitive_shading_rate = "VUID-vkCmdDrawMultiIndexedEXT-primitiveFragmentShadingRateWithMultipleViewports-04552";
+        patch_control_points = "VUID-vkCmdDrawMultiIndexedEXT-None-04875";
+        rasterizer_discard_enable = "VUID-vkCmdDrawMultiIndexedEXT-None-04876";
+        depth_bias_enable = "VUID-vkCmdDrawMultiIndexedEXT-None-04877";
+        logic_op = "VUID-vkCmdDrawMultiIndexedEXT-logicOp-04878";
+        primitive_restart_enable = "VUID-vkCmdDrawMultiIndexedEXT-None-04879";
+        vertex_input_binding_stride = "VUID-vkCmdDrawMultiIndexedEXT-pStrides-04884";
+        vertex_input = kVUID_Core_CmdDrawMultiIndexedEXT_VertexInput;
+    }
+};
+
 struct DispatchVuidsCmdDrawIndirect : DrawDispatchVuid {
     DispatchVuidsCmdDrawIndirect() : DrawDispatchVuid() {
         pipeline_bound                     = "VUID-vkCmdDrawIndirect-None-02700";
@@ -689,6 +734,7 @@ static const std::map<CMD_TYPE, DrawDispatchVuid> kDrawdispatchVuid = {
     {CMD_DRAW, DispatchVuidsCmdDraw()},
     {CMD_DRAWMULTIEXT, DispatchVuidsCmdDrawMultiEXT()},
     {CMD_DRAWINDEXED, DispatchVuidsCmdDrawIndexed()},
+    {CMD_DRAWMULTIINDEXEDEXT, DispatchVuidsCmdDrawMultiIndexedEXT()},
     {CMD_DRAWINDIRECT, DispatchVuidsCmdDrawIndirect()},
     {CMD_DRAWINDEXEDINDIRECT, DispatchVuidsCmdDrawIndexedIndirect()},
     {CMD_DISPATCH, DispatchVuidsCmdDispatch()},
